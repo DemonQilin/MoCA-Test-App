@@ -1,0 +1,66 @@
+:root {
+  /* Theme colors */
+  --main-color: lightseagreen;
+  --letter-color: rgb(239, 239, 239);
+  --bg-color: #333;
+
+  /* Fonts */
+  --font-family: 'Roboto', sans-serif;
+  --font-title: 'Noto Sans', sans-serif;
+  --font-size: 62.5%;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+body {
+  margin:0;
+  padding: 0 3rem;
+
+  font-size: 1.6rem;
+
+  color: var(--letter-color);
+  background-color: var(--bg-color);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-title);
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+a {
+  color: var(--letter-color);
+  text-decoration: none;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  cursor: pointer;
+}
