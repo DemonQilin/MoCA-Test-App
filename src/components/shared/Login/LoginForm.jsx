@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { setUser } from '../../../store/reducers/user.slice';
 
 const LoginForm = ({backPage}) => {
     const [formState, setFormState] = useState({ name: '', age: '', education: ''});
     const [errorForm, setErrorForm] = useState({});
     const [orderInput, setOrderInput] = useState(0);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     // Intermediate Methods
     const nameInput = () => {
@@ -43,16 +46,20 @@ const LoginForm = ({backPage}) => {
         return errorFormCopy;
     };
 
+    const validateError = () => {
+        if (errorForm[nameInput()] || !formState[nameInput()]) {
+            setErrorForm(validateInput(nameInput(), formState[nameInput()]));
+            return false;
+        };
+
+        return true;
+    };
+
     // Visual Interaction Methods
     const nextInput = plus => {
         if (plus === 1) {
-            if (Object.keys(errorForm).length !== 0 || !formState[nameInput()]) return;
+            if (!validateError()) return;
         }
-
-        if (orderInput === 2) {
-            navigate(backPage);
-            return
-        };
 
         setOrderInput(orderInput + plus);
     };
@@ -115,15 +122,17 @@ const LoginForm = ({backPage}) => {
     const submitForm = e => {
         e.preventDefault();
 
-        if (Object.keys(errorForm).length !== 0 || !formState[nameInput()]) return;
+        if (!validateError()) return;
 
-        
         const users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
 
         formState.id = genId();
         users.push(formState);
         localStorage.setItem('users', JSON.stringify(users));
         
+        // Log in
+        dispatch(setUser(formState));
+
         // Reset form state
         setFormState({ name: '', age: '', education: '' });
 

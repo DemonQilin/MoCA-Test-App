@@ -1,13 +1,15 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router';
 
-const ProtectedRoute = (children) => {
-    const logged = false;
+const ProtectedRoute = ({children}) => {
+    const user = useSelector(store => store.user);
     const location = useLocation();
 
-    if (logged) {
+    if (user) {
         return children;
     }
+    
     return <Navigate to='/login' state={{ backPage: location.pathname }} />;
 }
 
