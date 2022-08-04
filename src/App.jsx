@@ -1,17 +1,24 @@
 import './App.css'
+import { useEffect, useState } from 'react';
 
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// Router
 import { Route, Routes } from 'react-router';
+
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from './store/reducers/user.slice';
-import ProtectedRoute from './components/Security/ProtectedRoute';
+import { setLoader } from './store/reducers/loader.slice';
+
+// Components
+import ProtectedRoute from './components/shared/ProtectedRoute';
 import Login from './components/shared/Login/Login';
 import Loader from './components/shared/Loader/Loader';
-import { setLoader } from './store/reducers/loader.slice';
+import Home from './components/Home/Home';
 
 function App() {
   const dispatch = useDispatch();
   const loader = useSelector(store => store.loader);
+  const [checkUser, setCheckUser] = useState(false);
 
   useEffect(() => {
     const users = JSON.parse(localStorage.getItem('users'));
@@ -20,6 +27,8 @@ function App() {
       const userKeepLogged = users.find(user => user.keepLogged);
       if (userKeepLogged) dispatch(setUser(userKeepLogged));
     }
+
+    setCheckUser(true);
     
     setTimeout(() => {
       dispatch(setLoader(false));
@@ -29,10 +38,12 @@ function App() {
   return (
     <div className="App">
       {loader && <Loader/>}
-      <Routes>
-        <Route path='/login' element={<Login />} />
-        <Route path='/' element={<ProtectedRoute><h1>This is Home</h1></ProtectedRoute>} />
-      </Routes>
+      {checkUser && (
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/' element={<ProtectedRoute><Home/></ProtectedRoute>} />
+        </Routes>
+      )}
     </div>
   )
 }
