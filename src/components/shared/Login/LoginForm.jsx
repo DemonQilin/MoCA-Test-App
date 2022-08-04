@@ -143,7 +143,7 @@ const LoginForm = ({backPage}) => {
     return (
         <>
             <h1>Información de registro</h1>
-            <form onSubmit={submitForm}>
+            <form onSubmit={submitForm} autoComplete='off'>
                 {visibleInput()}
                 {errorForm[nameInput()] ? <span>{errorForm[nameInput()]}</span> : null}
                 {orderInput > 0 && <button type='button' onClick={e => nextInput(-1)}>Anterior</button>}
