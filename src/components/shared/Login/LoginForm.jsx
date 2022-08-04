@@ -137,7 +137,7 @@ const LoginForm = ({backPage}) => {
         setFormState({ name: '', age: '', education: '' });
 
         // Redirecting at page where the user previously accessed
-        navigate(backPage);
+        navigate(backPage || '/');
     };
 
     return (

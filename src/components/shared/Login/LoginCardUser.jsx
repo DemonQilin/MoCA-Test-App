@@ -17,7 +17,7 @@ const LoginCardUser = ({ user, users, keepLogged, backPage}) => {
         }
 
         dispatch(setUser(user));
-        navigate(backPage);
+        navigate(backPage || '/');
     }
 
     return (
