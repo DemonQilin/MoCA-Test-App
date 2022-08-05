@@ -14,6 +14,7 @@ import ProtectedRoute from './components/shared/ProtectedRoute';
 import Login from './components/shared/Login/Login';
 import Loader from './components/shared/Loader/Loader';
 import Home from './components/Home/Home';
+import Test from './components/Test/Test';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,8 +41,10 @@ function App() {
       {loader && <Loader/>}
       {checkUser && (
         <Routes>
+          <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path='/login' element={<Login />} />
-          <Route path='/' element={<ProtectedRoute><Home/></ProtectedRoute>} />
+          <Route path='/test' element={<ProtectedRoute><Test/></ProtectedRoute>}>
+          </Route>
         </Routes>
       )}
     </div>
