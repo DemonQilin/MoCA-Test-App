@@ -41,8 +41,8 @@ function App() {
       {loader && <Loader/>}
       {checkUser && (
         <Routes>
-          <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path='/login' element={<Login />} />
+          <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path='/test' element={<ProtectedRoute><Test/></ProtectedRoute>}>
           </Route>
         </Routes>

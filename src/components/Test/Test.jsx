@@ -1,27 +1,31 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Help from './Help'
 import './styles/Test.css'
+import AlternatingUnion from './Visuosespatial/AlternatingUnion';
 
 const Test = () => {
     const $windowHelp = useRef();
+    const $btnInHelp = useRef();
     const [taskId, setTaskId] = useState(1);
     const score = [];
-    const titles = ['Componente Visuoespacial-Unión Alternada']
+    const titles = ['Componente Visuoespacial-Unión Alternada', 'Componente Visuoespacial-Copiar el Cubo', 'Componente Visuoespacial-Dibujar un reloj   ']
 
     const getTask = () => {
         switch (taskId) {
             case 1:
-                return
             case 2:
-                return
             case 3:
-                return
+                return <AlternatingUnion score={score} setTaskId={setTaskId} taskId={taskId} />
         }
     };
 
     const handlerViewHelp = e => {
         $windowHelp.current.classList.toggle('Help-active');
     };
+
+    useEffect(() => {
+        handlerViewHelp()
+    }, [taskId]);
 
     return (
         <>  
@@ -36,7 +40,7 @@ const Test = () => {
             <main>
                 {getTask()}
             </main>
-            <Help id={taskId} $windowHelp={$windowHelp} />
+            <Help id={taskId} $windowHelp={$windowHelp} $btnInHelp={$btnInHelp} handlerViewHelp={handlerViewHelp} />
         </>
     )
 }
