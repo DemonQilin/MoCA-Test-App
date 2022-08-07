@@ -4,6 +4,7 @@ import './styles/Test.css'
 import Identification from './Identification/Identification';
 import AlternatingUnion from './Visuosespatial/AlternatingUnion';
 import Memory from './Memory/Memory';
+import Attention from './Attention/Attention';
 
 const score = [];
 
@@ -11,7 +12,7 @@ const Test = () => {
     const $windowHelp = useRef();
     const $btnInHelp = useRef();
     const [taskId, setTaskId] = useState(1);
-    const titles = ['Componente Visuoespacial-Unión Alternada', 'Componente Visuoespacial-Copiar el Cubo', 'Componente Visuoespacial-Dibujar un reloj', 'Componente de Identificación-Nombrar los animales', 'Componente Memoria-Recordar las palabras', 'Componente Memoria - Recordar las palabras 2ª vez']
+    const titles = ['Componente Visuoespacial-Unión Alternada', 'Componente Visuoespacial-Copiar el Cubo', 'Componente Visuoespacial-Dibujar un reloj', 'Componente de Identificación-Nombrar los animales', 'Componente Memoria-Recordar las palabras', 'Componente Memoria-Recordar las palabras 2ª vez', 'Componente Atención-Secuencia númerica', 'Componente Atención-Concentración y acción']
 
     const getTask = () => {
         switch (taskId) {
@@ -22,9 +23,12 @@ const Test = () => {
             case 4:
                 return <Identification score={score} setTaskId={setTaskId} taskId={taskId} />
             case 5:
-                return <Memory score={score} setTaskId={setTaskId} taskId={taskId} />
             case 6:
                 return <Memory score={score} setTaskId={setTaskId} taskId={taskId} />
+            case 7:
+            case 8:
+            case 9:
+                return <Attention score={score} setTaskId={setTaskId} taskId={taskId} />
         }
     };
 

@@ -17,7 +17,7 @@ export const useFormTask = (validationInput, nameInput, actionSubmit, validation
         e.preventDefault();
 
         try {
-            if (!input) throw {};
+            if (!input) throw new Error('Este campo es requerido');
             if (validationSubmit) {
                 for (let i = 0; i < validationSubmit.length; i++) {
                     if (!(new RegExp(validationSubmit[i], 'ig').test(input))) throw {};
@@ -26,7 +26,7 @@ export const useFormTask = (validationInput, nameInput, actionSubmit, validation
 
             actionSubmit(input, setInput, e.target);
         } catch (error) {
-            console.log(error);
+            console.error(error.message);
             e.target[nameInput].focus();
             return
         }
