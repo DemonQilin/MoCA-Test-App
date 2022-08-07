@@ -1,0 +1,97 @@
+.Memory {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.Memory_div {
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 10px 10px 10px #000;
+
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.Memory_form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Memory_input {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem 3rem;
+
+    font-size: 1.8rem;
+
+    background-color: var(--bg-color);
+    color: inherit;
+    border: 2px solid var(--main-color);
+    border-radius: 3rem/50%;
+}
+
+.Memory_list {
+    width: 100%;
+    max-width: 500px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    list-style: none;
+}
+
+.Memory_item {
+    width: 140px;
+    padding: 1rem 1rem 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(225, 111, 44);
+    /* background-color: rgb(125, 120, 117); */
+    /* background-color: rgb(55, 117, 164); */
+    border-radius: 2rem/50%;
+    box-shadow: 5px 5px 5px #000;
+}
+
+.Memory_item_div {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Memory_item_btn {
+    width: 20px;
+    aspect-ratio: 1;
+    padding: 0;
+
+    text-align: center;
+    font-size: 1rem;
+
+    background-color: rgba(128, 128, 128, 0.5);
+    color: inherit;
+    border-radius: 50%;
+}

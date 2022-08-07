@@ -6,7 +6,9 @@ const Help = ({ id, $windowHelp, $btnInHelp, handlerViewHelp }) => {
     'Dibuje una linea para unir cada par de puntos, alternando entre cifras y letras, respetando el orden númerico y alfabético.\n Comience en el número 1, siga a la letra A, a continuación al número 2 y así sucesivamente hasta terminar en la letra E.',
     'Copia el cubo que aparece a continuación de la manera más precisa que puedas.',
     'Dibuje un reloj, que incluya todos los números y que marque las 11 y 10.',
-    'Escriba el nombre de cada uno de lo siguientes animales, de izquierda a derecha. Separe cada nombre con una coma.'
+    'Escriba el nombre de cada uno de lo siguientes animales, de izquierda a derecha. Separe cada nombre con una coma (no caracteres especiales como tildes, guiones, etc).',
+    'En esta prueba escuchara una lista de palabras que debe memorizar. Escuche con atención y una vez finalice el audio, escriba las palabras que pueda recordar. Escriba la palabra y luego presione ENTER, podra ver como se agrega en la parte inferior.',
+    'Escuchara nuevamente las mismas palabras de la prueba anterior. Intente recordar todas las palabras que le sean posible'
   ];
 
   const handlerBtnHelp = e => {
