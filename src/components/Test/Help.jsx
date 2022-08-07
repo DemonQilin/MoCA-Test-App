@@ -5,7 +5,8 @@ const Help = ({ id, $windowHelp, $btnInHelp, handlerViewHelp }) => {
   const helps = [
     'Dibuje una linea para unir cada par de puntos, alternando entre cifras y letras, respetando el orden númerico y alfabético.\n Comience en el número 1, siga a la letra A, a continuación al número 2 y así sucesivamente hasta terminar en la letra E.',
     'Copia el cubo que aparece a continuación de la manera más precisa que puedas.',
-    'Dibuje un reloj, que incluya todos los números y que marque las 11 y 10.'
+    'Dibuje un reloj, que incluya todos los números y que marque las 11 y 10.',
+    'Escriba el nombre de cada uno de lo siguientes animales, de izquierda a derecha. Separe cada nombre con una coma.'
   ];
 
   const handlerBtnHelp = e => {

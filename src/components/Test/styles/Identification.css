@@ -1,0 +1,34 @@
+.Identification {
+    flex-grow: 1;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.Identification_img-container img {
+    max-width: 100%;
+}
+
+.Identification_form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.Identification_input {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem 3rem;
+
+    font-size: 1.4rem;
+
+    background-color: var(--bg-color);
+    color: inherit;
+    border: 2px solid var(--main-color);
+    border-radius: 3rem/50%;
+}

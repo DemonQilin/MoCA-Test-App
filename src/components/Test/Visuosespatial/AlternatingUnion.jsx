@@ -22,7 +22,7 @@ const AlternatingUnion = ({ score, taskId, setTaskId }) => {
             taskId,
             score: taskId === 3 ? [calculateScore(0.1), calculateScore(0.2), calculateScore(0.3)] : taskId === 2 ? calculateScore(0.15) : calculateScore(0.1),
         });
-
+        
         setTaskId(taskId + 1);
     };
 
@@ -100,15 +100,10 @@ const AlternatingUnion = ({ score, taskId, setTaskId }) => {
         $canvas.current.addEventListener("mouseup", mouseUp);
         $canvas.current.addEventListener('touchmove', touchParse);
         $canvas.current.addEventListener('touchstart', touchParse);
-        
+
         return () => {
             window.removeEventListener('resize', resizeWindow);
-            unionImgElement.removeEventListener('load', drawImg);
-            $canvas.current.removeEventListener("mousedown", mouseDown);
-            $canvas.current.removeEventListener("mouseup", mouseUp);
-            $canvas.current.removeEventListener('touchmove', touchParse);
-            $canvas.current.removeEventListener('touchstart', touchParse);
-        };
+        }
     });
 
     return (
@@ -119,7 +114,7 @@ const AlternatingUnion = ({ score, taskId, setTaskId }) => {
                 width='0'
                 height='0'
             ></canvas>
-            <button className='alterning-union_next' onClick={handlerSendTask}>Enviar respuesta</button>
+            <button className='Test-btn--next' onClick={handlerSendTask}>Enviar respuesta</button>
         </div>
     )
 }

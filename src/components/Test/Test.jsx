@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Help from './Help'
 import './styles/Test.css'
+import Identification from './Identification/Identification';
 import AlternatingUnion from './Visuosespatial/AlternatingUnion';
+
+const score = [];
 
 const Test = () => {
     const $windowHelp = useRef();
     const $btnInHelp = useRef();
     const [taskId, setTaskId] = useState(1);
-    const score = [];
-    const titles = ['Componente Visuoespacial-Unión Alternada', 'Componente Visuoespacial-Copiar el Cubo', 'Componente Visuoespacial-Dibujar un reloj   ']
+    const titles = ['Componente Visuoespacial-Unión Alternada', 'Componente Visuoespacial-Copiar el Cubo', 'Componente Visuoespacial-Dibujar un reloj', 'Componente de Identificación-Nombrar los animales', 'Componente Memoria-Recordar las palabras']
 
     const getTask = () => {
         switch (taskId) {
@@ -16,6 +18,8 @@ const Test = () => {
             case 2:
             case 3:
                 return <AlternatingUnion score={score} setTaskId={setTaskId} taskId={taskId} />
+            case 4:
+                return <Identification score={score} setTaskId={setTaskId} taskId={taskId} />
         }
     };
 
