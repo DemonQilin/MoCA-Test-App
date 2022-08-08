@@ -1,0 +1,109 @@
+.Attention {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Concentration {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Concentration-btn_container {
+    --size: 400px;
+
+    position: relative;
+
+    width: var(--size);
+    aspect-ratio: 1;
+
+    background: #ccd0d4;
+    border-radius: 8px;
+    box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.25),
+                inset 0 2px 1px 1px rgba(255, 255, 255, 0.9),
+                inset 0 -2px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.Concentration-btn_container::before {
+    --radius: calc(var(--size) * 0.845);
+    --glow: calc(var(--size) * 0.125);
+
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: calc(var(--radius) - var(--glow));
+    aspect-ratio:1;
+    margin-left: calc((var(--radius) - var(--glow)) * -0.5);
+    margin-top: calc((var(--radius) - var(--glow)) * -0.5);
+
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: 0 0 var(--glow) calc(var(--glow) / 2) #fff;
+    opacity: 0.2;
+}
+
+.Concentration-btn_btn {
+    --radius: calc(var(--size) * 0.688);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    display: block;
+    width: var(--radius);
+    aspect-ratio: 1;
+    margin-left: calc(var(--radius) * -0.5);
+    margin-top: calc(var(--radius) * -0.5);
+    
+    background: rgb(237, 70, 70);
+    border-radius: var(--radius);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5),
+                inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2),
+                0 -10px 15px -1px rgba(255, 255, 255, 0.6),
+                inset 0 3px 4px -1px rgba(255, 255, 255, 0.2),
+                inset 0 0 5px 1px rgba(255, 255, 255, 0.8),
+                inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+
+    filter: blur(1px);
+}
+
+.Concentration-btn_label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+
+    font-weight: 700;
+    text-align: center;
+    font-size: 32px;
+
+    color: rgba(0, 0, 0, 0.4);
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgb(237, 70, 70),
+                 0 0 0 rgba(0, 0, 0, 0.8),
+                 1px 1px 4px #fff;
+
+    transform: translate(-50%, -50%);
+    transition: color 300ms ease-out;
+    cursor: pointer;
+}
+
+.Concentration-btn_btn:active {
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4),
+                inset 0 -8px 30px 1px rgba(161, 36, 36, 0.9),
+                0 -10px 15px -1px rgba(255, 255, 255, 0.6),
+                inset 0 8px 25px 0 rgba(0, 0, 0, 0.4),
+                inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+}
+
+.Concentration-btn_btn:active ~ .Concentration-btn_label {
+    font-size: 30px;
+
+    color: rgba(0, 0, 0, 0.45);
+}

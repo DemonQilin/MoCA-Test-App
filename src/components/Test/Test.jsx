@@ -12,7 +12,7 @@ const Test = () => {
     const $windowHelp = useRef();
     const $btnInHelp = useRef();
     const [taskId, setTaskId] = useState(1);
-    const titles = ['Componente Visuoespacial-Unión Alternada', 'Componente Visuoespacial-Copiar el Cubo', 'Componente Visuoespacial-Dibujar un reloj', 'Componente de Identificación-Nombrar los animales', 'Componente Memoria-Recordar las palabras', 'Componente Memoria-Recordar las palabras 2ª vez', 'Componente Atención-Secuencia númerica', 'Componente Atención-Concentración y acción']
+    const titles = ['Componente Visuoespacial-Unión Alternada', 'Componente Visuoespacial-Copiar el Cubo', 'Componente Visuoespacial-Dibujar un reloj', 'Componente de Identificación-Nombrar los animales', 'Componente Memoria-Recordar las palabras', 'Componente Memoria-Recordar las palabras 2ª vez', 'Componente Atención-Secuencia númerica', 'Componente Atención-Concentración y acción', 'Componente Atención-Restando números']
 
     const getTask = () => {
         switch (taskId) {

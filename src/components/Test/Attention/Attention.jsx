@@ -1,4 +1,5 @@
 import React from 'react'
+import Concentration from './Concentration'
 import NumberSequence from './NumberSequence'
 
 const Attention = ({ score, setTaskId, taskId }) => {
@@ -8,7 +9,7 @@ const Attention = ({ score, setTaskId, taskId }) => {
                 taskId === 7
                     ? <NumberSequence score={score} setTaskId={setTaskId} taskId={taskId} />
                     : taskId === 8
-                        ? <div>Golpecito</div>
+                        ? <Concentration score={score} setTaskId={setTaskId} taskId={taskId} />
                         : <div>Restar</div>
             }
         </div>

@@ -9,7 +9,8 @@ const Help = ({ id, $windowHelp, $btnInHelp, handlerViewHelp }) => {
     ['Escriba el nombre de cada uno de lo siguientes animales, de izquierda a derecha. Separe cada nombre con una coma (no caracteres especiales como tildes, guiones, etc).'],
     ['En esta prueba escuchara una lista de palabras que debe memorizar. Escuche con atención y una vez finalice el audio, escriba las palabras que pueda recordar. Escriba la palabra y luego presione ENTER, podra ver como se agrega en la parte inferior.'],
     ['Escuchara nuevamente las mismas palabras de la prueba anterior. Intente recordar todas las palabras que le sean posible'],
-    ['En esta prueba escuchara dos secuencias númericas. Para la primera, debe escribir los números en el MISMO ORDEN en que los escucha, y para la segunda, debe escribir los números en el ORDEN INVERSO.', 'Recuerde separar los números por comas.']
+    ['En esta prueba escuchara dos secuencias númericas. Para la primera, debe escribir los números en el MISMO ORDEN en que los escucha, y para la segunda, debe escribir los números en el ORDEN INVERSO.', 'Recuerde separar los números por comas.'],
+    ['En esta prueba escuchara una serie de letras, y cada vez que escuche la letra "A" debe presionar el botón rojo que hay en la pantalla.']
   ];
 
   const handlerBtnHelp = e => {

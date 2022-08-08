@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useFormTask } from '../../../hooks/useFormTask';
 import { useSpeak } from '../../../hooks/useSpeak';
 import Waiting from '../../shared/Waiting';
+import '../styles/NumberSequence.css'
 
 const NumberSequence = ({ score, setTaskId, taskId }) => {
     const sequences = [['2', '1', '8', '5', '4'], ['7', '4', '2']];
@@ -55,8 +56,8 @@ const NumberSequence = ({ score, setTaskId, taskId }) => {
             {listening && <Waiting message={sequence === 1 ? 'Primera secuencia' : 'Segunda secuencia'} />}
             {form && (
                 <>
-                    <form onSubmit={handlerSubmit} autoComplete='off'>
-                        <input type="text" name="sequenceInput" className='' placeholder='Escribe aqui la secuencia' value={input} onChange={handlerChange}/>
+                    <form onSubmit={handlerSubmit} autoComplete='off' className='NumberSequence_form'>
+                        <input type="text" name="sequenceInput" className='NumberSequence_input' placeholder='Escribe aqui la secuencia' value={input} onChange={handlerChange}/>
                         <button type='submit' className='Test-btn--next'>Enviar respuesta</button>
                     </form>
                 </>
